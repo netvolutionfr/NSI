@@ -11,9 +11,16 @@ lab = iris.loc[:, "species"]
 # fin traitement CSV
 
 # valeurs
-longueur = 2.5
-largeur = 0.75
+fleurtrouvee = {
+    'longueur': 2.5,
+    'largeur': 0.75
+}
 k = 5
+
+
+longueur = fleurtrouvee['longueur']
+largeur = fleurtrouvee['largeur']
+
 # fin valeurs
 
 
@@ -35,19 +42,19 @@ prediction = model.predict([[longueur, largeur]])
 
 
 # Affichage résultats
-txt = "Résultat : "
+resultat = "Résultat : "
 if prediction[0] == 0:
-  txt = txt + "setosa"
+    resultat = resultat + "Setosa"
 if prediction[0] == 1:
-  txt = txt + "virginica"
+    resultat = resultat + "Virginica"
 if prediction[0] == 2:
-  txt = txt + "versicolor"
-plt.text(3, 0.5, f"largeur : {largeur} cm longueur : {longueur} cm", fontsize=12)
+    resultat = resultat + "Versicolor"
+
+plt.text(3, 0.5, f"Largeur : {largeur} cm Longueur : {longueur} cm", fontsize=12)
 plt.text(3, 0.3, f"k : {k}", fontsize=12)
-plt.text(3, 0.1, txt, fontsize=12)
+plt.text(3, 0.1, resultat, fontsize=12)
 # fin affichage résultats
 
 
 plt.show()
-
 
