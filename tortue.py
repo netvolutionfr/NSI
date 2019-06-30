@@ -18,11 +18,18 @@ def koch(tortue, n, l):
         koch(tortue, n - 1, l / 3)
 
 
+alex.color('blue', 'green')
+alex.begin_fill()
 alex.speed(0)
 alex.penup()
 alex.backward(250)
 alex.pendown()
-koch(alex, 4, 500)
+
+for i in range(3):
+    koch(alex, 5, 500)
+    alex.right(120)
+
+alex.end_fill()
 
 turtle.done()
 
